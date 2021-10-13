@@ -10,6 +10,7 @@ import Footer from "./components/Layout/Footer/Footer";
 import Loader from "./components/Loader/Loader";
 import Artists from "./components/Pages/Artists/Artists";
 import NotFound from "./components/Pages/NotFound/NotFound";
+import Artist from "./components/Pages/Artist/Artist";
 
 const darkThemeKey = 'darkTheme'
 
@@ -37,8 +38,8 @@ function App() {
               <Route exact path={['/']} render={({match}) =>
                   <Artists match={match}/>}/>
 
-              {/*<Route exact path={['/artist/:artistName']} render={({match}) =>*/}
-              {/*    <Artist match={match}/>}/>*/}
+              <Route exact path={['/artist/:artistName']} render={({match}) =>
+                  <Artist match={match}/>}/>
 
               {/*<Route exact path={['/songs']} render={({match}) =>*/}
               {/*    <Songs match={match}/>}/>*/}

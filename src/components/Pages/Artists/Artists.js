@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Loader from "../../../lib/Loader";
 import ExampleMusicService from "../../../lib/services/ExampleMusicService";
 import ScrollToTopButton from "../../ScrollToTopButton/ScrollToTopButton";
+import { Link } from "react-router-dom";
 
 function Artists() {
     const [artists, setArtists] = useState([])
@@ -28,7 +29,7 @@ function Artists() {
 
             {artists?.filter(artist => artist.name.toLowerCase().includes(query))?.length ?
                 artists?.filter(artist => artist.name.toLowerCase().includes(query)).map(artist =>
-                    <div key={artist.id}>{artist.name}</div>) :
+                    <Link key={artist.id} to={`/artist/${artist.name}`}>{artist.name}</Link>) :
                 <h3>No results...</h3>}
             {artists?.length > 50 && <ScrollToTopButton/>}
         </div>
